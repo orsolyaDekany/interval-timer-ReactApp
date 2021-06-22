@@ -1,20 +1,24 @@
 import React from 'react';
+import { ActionTypes } from "../actions/actions.js";
 
+
+export const Reducer = (initialState, action) => {
+  
 const initialState = {
-    startTimer: null,
-    pausedTimer: false,
-    isTimer: true,
-  };
-
-function reducer(state, action) {
+  startTimer: null,
+  pausedTimer: false,
+  isTimer: true,
+};
     switch (action.type) {
-      case 'increment':
+      case ActionTypes.IS_TIMER:
         return {};
-      case 'decrement':
+      case ActionTypes.START_TIMER:
+        return {};
+      case ActionTypes.STOP_TIMER:
+        return {};
+      case ActionTypes.PAUSE_TIMER:
         return {};
       default:
         throw new Error();
     }
   }
-
-export default reducer;

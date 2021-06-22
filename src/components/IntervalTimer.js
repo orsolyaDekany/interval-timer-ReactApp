@@ -1,11 +1,14 @@
 import React from 'react';
-import { Ref } from 'react';
+import { Ref, useReducer } from 'react';
+import {Reducer} from '../reducers/reducer.js';
+import {isTimer,startTimer,stopTimer,pausedTimer} from '../actions/actions.js';
 
-function IntervalTimer(startTimer,pausedTimer,isTimer) {
 
-    const reducer = () => {
 
-    }
+function IntervalTimer(isTimer,startTimer,stopTimer,pausedTimer) {
+
+    const [state, dispatch] = useReducer(Reducer, initialState);
+
 
     return (
         <div>
@@ -20,7 +23,8 @@ function IntervalTimer(startTimer,pausedTimer,isTimer) {
                 <input type="text"  ref={(input) => (this.secondInput = input)}/>
             </div>
             </form>
-            <button>
+            <button
+            >
 
             </button>
         </div>
